@@ -8,5 +8,4 @@ Munteanu-Bardan Raul-Octav
 Mocan Adelina
 Munteanu-Bardan Raul-Octav
 Mocan Adelina
-Bzovii Elena
-Achimescu Andrei
+Bzovii Elenas
