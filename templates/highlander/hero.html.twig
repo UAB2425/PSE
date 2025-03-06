@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Highlander's Hero Page
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/HighlanderStyle.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div id = "hero-card">
+        <div id="hero-portrait-container">
+            <img id="hero-portrait-img" src="{{ asset('images/highlander.png') }}" alt="Secretly a manchild">
+            <h3 id="hero-portrait-support-text">
+                WANTED - DEAD OR ALIVE
+            </h3>
+        </div>
+            <div id="hero-description">
+                <ul>
+                    <li> <b>Name: </b> Munteanu-Bardan Raul-Octav</li>
+                    <li> <b>Alias: </b> Highlander </li>
+                    <li> <b>Bounty: </b> <div id="bounty-sum"> $1,000,000 </div> </li>
+                </ul>
+                <p class="text-header"> Crime: </p>
+                <p>                   
+                    The notorious Highlander is wanted for multiple counts of grand theft, armed robbery, 
+                    and assault on law enforcement officers. With a long history of evading capture, he 
+                    is known for his brutal tactics and strategic mind. Highlander has been linked to several 
+                    high-profile robberies across the nation and is considered extremely dangerous.
+                </p>
+                <p class="text-header"> Last seen: </p> 
+                <p>
+                    Highlander was last seen in the remote highlands, near the city of Alba Iulia, rumored to be 
+                    planning another heist. He is often seen wearing tactical gear and can be recognized by the earrings 
+                    in both of his ears. 
+                </p>
+            </div>
+    </div>
+{% endblock %}
