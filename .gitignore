@@ -1,0 +1,26 @@
+# Fișiere de sistem (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+
+# Dependențe și build-uri
+vendor/
+node_modules/
+assets/vendor/
+# Fișiere de sistem (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+
+# Dependențe și build-uri
+vendor/
+node_modules/
+assets/vendor/
+
+# Cache și fișiere temporare
+var/
+cache/
+logs/
+
+# Config local și fișiere sensibile
+.env
+.env.local
+.env.*.local

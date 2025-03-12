@@ -1,19 +1,19 @@
 <?php
 
-// src/Controller/PersonalPageController.php
+// src/Controller/RusuCatalinController.php
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class PersonalPageController extends AbstractController
+class RusuCatalinController extends AbstractController
 {
-    #[Route('/nume', name: 'personal_page')]
+    #[Route('/RusuCatalin', name: 'Rusu')]
     public function index(): Response
     {
-        return $this->render('personal_page/index.html.twig', [
-            'name' => 'Numele Tău',
+        return $this->render('Rusu/index.html.twig', [
+            'name' => 'Rusu Catalin',
         ]);
     }
 }
