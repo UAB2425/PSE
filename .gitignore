@@ -1,0 +1,6 @@
+
+assets/vendor
+var/
+vendor/
+
+*.env
