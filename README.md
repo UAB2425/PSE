@@ -16,3 +16,4 @@ Lascus Andrea
 
 Figlea Diana
 Cocerba Alexandru
+Frumosu Lucian
