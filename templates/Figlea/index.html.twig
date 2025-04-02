@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagină personală{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('css/figlea.css') }}">
+
+    <div class="container">
+    <h1>Pagină personală</h1>
+    <br>
+        <div class="image-text-container">
+        
+            <div class="image-container">
+                <img src="{{ asset('images/figlea_imagine.jpg') }}" alt="Imagine personală">
+            </div>
+            <div class="name-container">
+                <h3>Numele meu este Figlea Diana - Maria.</h3>
+                <h3>Sunt studentă la Universitatea "1 Decembrie 1918" din Alba-Iulia, Facultatea de Informatică și Inginerie, specializarea Programare Avansată și Baze de Date.</h3>
+            </div>
+        </div>
+        
+        <div class="content-container">
+            <h2>Informații</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel orci at erat ultrices consequat. Fusce consectetur faucibus torttor, eget posuere nibh egestas vitae. Maecenas lobortis elit id leo cursus sollicitudin. Ut rhoncus tellus risus, ullamcorper blandit ex aliquet id. Duis ac tempor nisi, vitae pellentesque dui. Integer dignissim torttor sit amet est laoreet hendrerit. Nullam porta vestibulum justo quis auctor. Sed non ante ligula. Sed malesuada turpis quis ligula pharetra luctus. Donec eleifend ultrices nulla, sed cursus arcu suscipit in. Nam dictum feugiat aliquet. Aliquam commodo nulla in magna aliquam sollicitudin eu et velit. Aenean varius elit massa, id consectetur dolor maximus in. Vivamus sed tincidunt quam. Ut eget nibh aliquam mauris auctor hendrerit.</p>
+            <p>Nulla convallis fringilla pulvinar. Praesent pulvinar efficitur quam, a rutrum quam viverra non. Nulla pretium odio vitae leo tincidunt vehicula. Sed vitae accumsan nisl. Sed mollis mauris vel ante lacinia, ac blandit neque fermentum. Maecenas bibendum orci eget augue pretium mattis. Aenean vitae rhoncus quam. Phasellus vitae maximus turpis. Mauris eu convallis neque, et ultrices ipsum. Donec sagittis dictum venenatis. Etiam malesuada aliquet risus, in cursus mi ornare id. Aliquam vel cursus libero. Maecenas porttitor orci et elit bibendum, sit amet vehicula mauris tempor.</p>
+            <p>Phasellus sit amet diam eu metus scelerisque dapibus. Vivamus urna neque, laoreet a risus viverra, iaculis hendrerit sapien. Duis porta tempor suscipit. Quisque ipsum ligula, feugiat id magna feugiat, scelerisque venenatis tellus. Nullam felis massa, commodo dapibus commodo in, tempor quis felis. Integer venenatis torttor odio, et consectetur nisl mollis et. Phasellus nulla lectus, semper vel consequat in, maximus id purus. Aliquam quis turpis congue, feugiat orci eu, viverra augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque non odio a est egestas finibus.</p>
+            <br>
+            <h2>Activități desfășurate în timpul liber:</h2>
+            <ul>
+                <li>Călătorit în zone montane</li>
+                <li>Citit cărți în format fizic</li>
+                <li>Vizionat filme/seriale</li>
+                <li>Plimbări cu ATV</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
