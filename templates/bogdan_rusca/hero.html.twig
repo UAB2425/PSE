@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Pagina Personală - Bogdan Rusca
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/RuscaBogdanStyle.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div id="content-container">
+        <!-- Imaginea personală -->
+        <img id="personal-image" src="{{ asset('images/RuscaPhoto.jpeg') }}" alt="Bogdan Rusca">
+
+        <div id="text-content">
+            <h1>Bogdan Rusca</h1>
+            <p>
+                Bine ați venit pe pagina mea personală! Sunt pasionat de tehnologie, dezvoltare software și 
+                explorarea noilor inovații din domeniu.
+            </p>
+
+            <p>
+                Îmi place să lucrez la proiecte creative, să descopăr soluții noi și să împărtășesc ceea ce învăț 
+                cu alții. Aceasta este o pagină unde veți găsi informații despre mine și interesele mele.
+            </p>
+
+            <p>
+                De-a lungul timpului, am acumulat experiență în domeniul IT și am învățat multe lecții valoroase. 
+                Mai jos sunt câteva dintre aspectele pe care le consider importante în dezvoltarea personală:
+            </p>
+
+            <ul>
+                <li>Învățarea continuă este cheia succesului.</li>
+                <li>Este important să îți urmezi pasiunea și să investești timp în ceea ce iubești.</li>
+                <li>Colaborarea cu alți oameni aduce perspective noi și idei valoroase.</li>
+                <li>Adaptabilitatea și flexibilitatea sunt esențiale în orice domeniu.</li>
+            </ul>
+
+            <p>
+                Mulțumesc că ai vizitat pagina mea! Sper că informațiile de aici îți vor fi de folos. 
+                Dacă ai întrebări sau vrei să discutăm despre un proiect, nu ezita să mă contactezi.
+            </p>
+        </div>
+    </div>
+{% endblock %}
