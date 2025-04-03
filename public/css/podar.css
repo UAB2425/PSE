@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Titlul va fi deasupra */
+    align-items: center;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.content h1 {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spatiu între imagine și text */
+    width: 100%;
+    gap: 30px; /* Distanță între imagine și text */
+}
+
+.image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text-section {
+    flex: 1;
+    text-align: justify;
+}
+
+.text-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sections-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.interests {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 20px;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.interests h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.interests ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.interests ul li {
+    color: #333;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    width: 100%;
+}
