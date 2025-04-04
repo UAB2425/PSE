@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina personală - {{ name }}</title>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/Cry.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <h1>Goro Majima,Patriach of Majima Family !</h1>
+        
+        <div class="content">
+            <img src="{{ asset(image_path) }}" alt="Poza personală {{ name }}">
+            <div class="text">
+                {% for paragraph in paragraphs %}
+                    <p>{{ paragraph|raw }}</p>
+                {% endfor %}
+                <ul>
+                    {% for interest in interests %}
+                        <li>{{ interest }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
