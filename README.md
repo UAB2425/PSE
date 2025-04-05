@@ -21,3 +21,4 @@ Dicu Alexandru-Robert
 
 Barbut Dragos-Razvan
 Rusca Bogdan-Ioan
+Frumosu Lucian
