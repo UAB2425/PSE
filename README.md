@@ -13,7 +13,7 @@ Petru Lazar
 Jibotean Denis-Virgil
 Lascus Andrea
 
-
+Pop Patricia
 Figlea Diana
 Cocerba Alexandru
 Achimescu Andrei
@@ -29,6 +29,3 @@ Rusca Bogdan-Ioan
 
 Frumosu Lucian
 Prata Antoniu-Emanuel
-
-
-Pop Patricia
