@@ -44,6 +44,7 @@ class DraganController extends AbstractController
         if (!$session->get('authenticated')) {
             return new Response("Acces interzis! Trebuie să te autentifici.", 403);
         }
+		else{
 
         $content = $em->getRepository(DraganPageContent::class)->find(1);
         if (!$content) {
@@ -63,6 +64,7 @@ class DraganController extends AbstractController
         return $this->render('dragan/edit.html.twig', [
             'content' => $content,
         ]);
+		}
     }
 
     #[Route('/Dragan/logout', name: 'dragan_logout')]
