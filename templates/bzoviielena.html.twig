@@ -3,33 +3,54 @@
 {% block title %}Pagina Personală{% endblock %}
 
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('css/bzoviielena.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bzoviielena.css') }}">
 
-    <div class="personal-container">
-        <div class="image-name-container">
-            <div class="image-container">
-                <img src="{{ asset('images/Bzovii_Elena_PSE_Project.jpg') }}" alt="Imagine personală">
-            </div>
-            <div class="name-container">
-                <h1>Bzovii Elena</h1>
-            </div>
+<div class="personal-container">
+    <div class="image-name-container">
+        <div class="image-container">
+            <img src="{{ asset('images/Bzovii_Elena_PSE_Project.jpg') }}" alt="Imagine personală">
         </div>
-        
-        <div class="text-container">
-            <h2>Despre Mine</h2>
-            <p>Sunt Bzovii Elena, studenta la master la specializarea programare avansata si baza de date, la facultatea de informatica si inginerie, la universitatea "1 Decembrie 1918" din Alba Iulia.</p>
-            <p>Momentan sunt angajata la Continental Sibiu ca si agile junior software engineer, si am o experienta de lucru in domeniu de aproximativ un an si jumatate.</p>
-            <p>In timpul liber sunt pasionata de arte vizuale, musica si carti si am calatorit cu ajutorul proiectelor Erasmus in mai multe tari.</p>
-            
-            <h2>Tarile vizitate</h2>
-            <ul>
-                <li>Belgia</li>
-                <li>Spania</li>
-                <li>Bulgaria</li>
-                <li>Polonia</li>
-                <li>Lituania</li>
-                <li>Marea Britanie</li>
-            </ul>
+        <div class="name-container">
+            <h1>{{ content.Nume }}</h1>
         </div>
     </div>
+
+    <div class="text-container">
+        <h2>Despre Mine</h2>
+        <p>{{ content.Descriere }}</p>
+        <p>Sunt Bzovii Elena, studenta la master la specializarea programare avansata si baza de date, la facultatea de informatica si inginerie, la universitatea "1 Decembrie 1918" din Alba Iulia.</p>
+        <p>Momentan sunt angajata la Continental Sibiu ca si agile junior software engineer, si am o experienta de lucru in domeniu de aproximativ un an si jumatate.</p>
+        <p>In timpul liber sunt pasionata de arte vizuale, muzica si carti si am calatorit cu ajutorul proiectelor Erasmus in mai multe tari.</p>
+
+        <h2>Tarile vizitate</h2>
+        <ul>
+            <li>Belgia</li>
+            <li>Spania</li>
+            <li>Bulgaria</li>
+            <li>Polonia</li>
+            <li>Lituania</li>
+            <li>Marea Britanie</li>
+        </ul>
+    </div>
+
+    <!-- 💅 Styled Login Form Below -->
+    <div class="login-section">
+        <h2>Autentificare</h2>
+        <form action="{{ path('bzovii_elena_login') }}" method="post" class="styled-login-form">
+            <div class="form-row">
+                <label for="username">Utilizator:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-row">
+                <label for="password">Parolă:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        {% if error %}
+            <p class="login-error">{{ error }}</p>
+        {% endif %}
+    </div>
+</div>
+
 {% endblock %}
