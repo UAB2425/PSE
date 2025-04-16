@@ -1,0 +1,90 @@
+<!-- templates/edit_bzovii_elena.html.twig -->
+<html>
+<head>
+    <title>Editare Descriere</title>
+    <link rel="stylesheet" href="{{ asset('css/bzoviielena.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .personal-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color:rgb(204, 138, 190);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button.logout-button {
+            background-color:rgb(152, 30, 144);
+            margin-top: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+<div class="personal-container">
+    <h1>Editare Descriere</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" name="nume" value="{{ content.Nume }}" required>
+        </div>
+        <div class="form-group">
+            <label for="descriere">Descriere:</label>
+            <textarea id="descriere" name="descriere" rows="6" required>{{ content.Descriere }}</textarea>
+        </div>
+        <button type="submit">Salvează Modificările</button>
+    </form>
+
+    <form action="{{ path('bzovii_elena_logout') }}" method="post">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+</div>
+</body>
+</html>
