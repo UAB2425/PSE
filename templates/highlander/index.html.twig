@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Highlander's Blog | WELCOME
+{% endblock %}
+
+{% block scripts%}
+<script>
+document.querySelectorAll('.comment-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const articleId = form.dataset.articleId;
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+
+        const result = await response.json();
+        if (result.html) {
+            const commentList = document.getElementById(`comments-list-${articleId}`);
+            commentList.insertAdjacentHTML('beforeend', result.html);
+            form.reset();
+        }
+    });
+});
+</script>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/highlander/BlogStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <div class="top-nav-bar">
+        <div class="top-nav-bar-left">
+            <div id="top-nav-bar-logo-box">
+                <a href="{{ path('blog_main_page') }}"> <img src="{{ asset('images/ship-wheel-logo.png') }}" id="top-nav-bar-logo"> </a>
+            </div>
+            <h3 id = "top-nav-bar-title">
+                Highlander's Blog 
+                {% if user != null %} | Welcome, <strong>{{user.accountUsername}}</strong> {% endif %}
+            </h3>
+        </div>
+        <div class="top-nav-bar-right">
+            {% if user != null %}
+                <a href="{{ path('blog_create_article') }}" class="top-navbar-button">CREATE ARTICLE</a>
+                <a href="{{ path('blog_logout') }}" class="top-navbar-button">LOGOUT</a>
+            {% else %}
+                <a href="{{ path('blog_login_page') }}" class="top-navbar-button">LOGIN</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="content-body">
+    {% for article in articles %}
+        <div class = "article-card">
+            <div class = "article-title-box">
+                <div class="article-title-box-left">
+                    <div class = "article-title">
+                        {{ article.articleTitle }}
+                    </div>
+                    <div class = "article-owner">
+                        {% if article.highlanderBlogAccount != null %}
+                            {{ article.highlanderBlogAccount.accountUsername }}
+                        {% else %}
+                            Anonymous
+                        {% endif %} @ {{article.articleDate}}
+                    </div>
+                </div>
+                {% if article.highlanderBlogAccount != null and user != null %}
+                    {% if article.highlanderBlogAccount.accountId == user.accountId %}
+                    <div class="article-title-box-right">
+                        <form method="post" action="{{ path('blog_delete_article', {'articleId': article.articleId}) }}" onsubmit="return confirm('Are you sure you want to delete this article?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.articleId) }}">
+                            <input type="image" src="{{ asset('images/delete-article.png') }}" alt="Delete" class="delete-button" />
+                        </form>
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class = "article-content">
+                {{ article.articleContent|nl2br }}
+            </div>
+
+            <hr class="rounded">
+
+            <div class = "comments-title-separator">
+                <strong> Comments </strong>
+            </div>
+
+            <div class="comments">
+                {% for comment in article.articleComments %}
+                <div class='comment-box'>
+                    <div class="comment">
+                        <strong>
+                        {% if comment.highlanderBlogAccount != null %}
+                            {{ comment.highlanderBlogAccount.accountUsername }}
+                        {% else %}
+                            Anonymous
+                        {% endif %}
+                        </strong>: {{ comment.commentContent }}
+                    
+                    </div>
+                    {% if comment.highlanderBlogAccount != null  and user != null%}
+                        {% if comment.highlanderBlogAccount.accountId == user.accountId %}
+                        <div class='comment-menu'>
+                            <form method="post" action="{{ path('blog_delete_comment', {'commentId': comment.commentId}) }}" onsubmit="return confirm('Are you sure you want to delete your comment?');">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.commentId) }}">
+                                <input type="image" src="{{ asset('images/delete-comment.png') }}" alt="Delete" class="delete-button-comment" />
+                            </form>
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <hr class="solid">
+                {% endfor %}
+            </div>
+            <div class="comment-form">
+            {{ form_start(commentForms[article.articleId], {
+                'label': '',
+                'attr': {
+                    'class': 'comment-form',
+                    'data-article-id': article.articleId
+                }
+            }) }}
+                {{ form_widget(commentForms[article.articleId].comment_content, {'attr': {
+                    'class': 'comment-form-field'
+                }}) }}
+                <button type="submit" class="comment-form-button">Post Comment</button>
+            {{ form_end(commentForms[article.articleId]) }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

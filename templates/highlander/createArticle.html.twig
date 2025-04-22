@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Highlander's Blog | WELCOME
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/highlander/BlogStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <div class="top-nav-bar">
+        <div class="top-nav-bar-left">
+            <div id="top-nav-bar-logo-box">
+                <a href="{{ path('blog_main_page') }}"> <img src="{{ asset('images/ship-wheel-logo.png') }}" id="top-nav-bar-logo"> </a>
+            </div>
+            <h3 id = "top-nav-bar-title">
+                Highlander's Blog | Welcome, {{user.accountUsername}}
+            </h3>
+        </div>
+        <div class="top-nav-bar-right">
+            <a href="{{ path('blog_create_article') }}" class="top-navbar-button">CREATE ARTICLE</a>
+            <a href="{{ path('blog_logout') }}" class="top-navbar-button">LOGOUT</a>
+        </div>
+    </div>
+
+    <div class="create_article_card">
+            {{ form_start(form) }}
+
+                <div class="form-group">
+                {{ form_row(form.article_title, {
+                    'label': 'Title',
+                    'label_attr': {'class': 'form-label'},
+                    'attr': {
+                        'class': 'form-input-field',
+                        'id': 'article_field',
+                        'placeholder': ''
+                    }
+                }) }}
+                </div>
+
+                <div class="form-group">
+                {{ form_row(form.article_content, {
+                    'label': 'Content',
+                    'label_attr': {'class': 'form-label'},
+                    'attr': {
+                        'class': 'form-input-field',
+                        'id': 'article_field',
+                        'placeholder': ''
+                    }
+                }) }}
+                </div>
+
+                {{ form_row(form.submit, {
+                    'attr': {
+                        'class': 'form-input-submit'
+                    }
+                }) }}
+
+                {{ form_end(form) }}
+        </div>
+{% endblock %}

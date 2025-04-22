@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Login Page | Highlander
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/highlander/BlogStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <div class="form-auth-card">
+        <div class="form-title">
+            <div id="logo-box">
+                <img src="{{ asset('images/ship-wheel-logo.png') }}">
+            </div>
+            <h2>
+                Highlander's Blog
+            </h2>
+        </div>
+
+        {% for message in app.flashes('notice') %}
+            <div class = "flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('error') %}
+            <div class = "flash-error">
+                {{ message }}
+            </div>
+        {% endfor %}
+        
+        <div class="form-auth-content">
+            {{ form_start(form) }}
+
+                <div class="form-group">
+                {{ form_row(form.username, {
+                    'label': 'Username',
+                    'label_attr': {'class': 'form-label'},
+                    'attr': {
+                        'class': 'form-input-field',
+                        'id': 'username',
+                        'placeholder': 'Your username'
+                    }
+                }) }}
+                </div>
+
+                <div class="form-group">
+                {{ form_row(form.password, {
+                    'label': 'Password',
+                    'label_attr': {'class': 'form-label'},
+                    'attr': {
+                        'class': 'form-input-field',
+                        'placeholder': 'Password'
+                    }
+                }) }}
+                </div>
+
+                {{ form_row(form.login, {
+                    'attr': {
+                        'class': 'form-input-submit'
+                    }
+                }) }}
+
+                {{ form_end(form) }}
+            <div class="form-bottom-text">
+                <p>Don't have an account?</p> <a href="{{path('blog_register_page')}}">Register</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
