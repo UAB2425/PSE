@@ -1,0 +1,409 @@
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #141414;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #141414 !important;
+    font-size: 1rem
+}
+
+.form-title{
+    font-size: clamp(1.25rem, 1.5vw + 2.5vh, 2.5rem);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.form-auth-card{
+    background-color: #404040;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    width: clamp(280px, 70vw, 700px);
+    border-radius: 5vh;
+    padding: 25px 25px;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    overflow: scroll;
+    border: 2px solid white;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.form-auth-content{
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+    width: fill;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.form-group {
+    font-size: clamp(1.5rem, 2.5vh, 3rem);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    align-content: center;
+    width: 100%;
+}
+
+
+.form-input-submit{
+    display: block;
+    color: white;
+    background-color: #FF9800;
+    border-radius: 15px;
+    font-size: clamp(1.75rem, 2.5vh, 3rem);
+    font-weight: 900;
+    padding: 15px 50px;
+    margin-top: 25px;
+    width:100%;
+}
+
+#logo-box{
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    border-color:white;
+    align-content: center;
+}
+
+#logo-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+.form-input-field{
+    padding: clamp(5px, 1vh, 20px);
+    font-size: clamp(1.5rem, 1.75vh, 3rem);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.form-label{
+    display: block;
+    width: 100%;
+    font-size: clamp(1.5rem, 3vh, 5rem);
+    color: white;
+}
+
+.form-bottom-text{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(1.5rem, 2.5vh, 3rem);
+    padding-bottom: 50px;
+}
+
+.flash-notice{
+    display: block;
+    width: 60%;
+    padding: 15px 10px;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1.5rem, 2.5vh, 3rem);
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #30ca09;
+}
+
+.flash-error{
+    display: block;
+    width: 60%;
+    padding: 15px 10px;
+    margin: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(1.5rem, 2.5vh, 3rem);
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #c50707;
+}
+
+.top-nav-bar{
+    width: 100%;
+    background-color: #404040;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    z-index: 1000;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-bottom: solid 2px #A4A4A4;
+}
+
+#top-nav-bar-title{
+    font-size: clamp(1.5rem, 1.5vw + 1.5vh, 3rem);
+}
+
+#top-nav-bar-logo-box{
+    margin-right: 25px;
+}
+
+#top-nav-bar-logo{
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+.top-nav-bar-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.top-nav-bar-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.top-navbar-button{
+    display: block;
+    color: white;
+    border-radius: 15px;
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    font-weight: 900;
+    padding: clamp(5px, 1vh, 20px);
+    margin-right: 3vw;
+}
+
+.content-body{
+    display: block;
+    padding-top: 300px;
+    padding-bottom: 150px;
+    width: 80%;
+    height: 100%;
+}
+
+.article-card{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    color: white;
+    background-color: #404040;
+    margin: 50px 0px;
+    margin-bottom: 75px;
+}
+
+.article-title-box{
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    padding: 25px 50px;
+    background-color:#FF9800 ;
+    color: white;
+    font-size: clamp(2rem, 2vw + 2vh, 5rem);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-title-box-left{
+    display: flex;
+    flex-direction: column;
+}
+.article-title-box-right{
+    margin-left: 25px;
+}
+
+.delete-button{
+    padding: 15px 30px;
+    height: 75px;
+    box-shadow: 0;
+    color: white;
+}
+
+.article-title{
+    text-align: start;
+    margin: 25px 0px;
+    color: white;
+    font-size: clamp(2rem, 2vw + 2vh, 5rem);
+}
+
+.article-owner{
+    font-size: clamp(1.25rem, 1.5vw + .75vh, 5rem);
+}
+
+.article-content{
+    color: white;
+    padding: 50px 50px;
+    text-align: justify;
+    font-size: clamp(1rem, 1vw + .75vh, 3rem);
+}
+
+.create_article_card{
+    display: flexbox;
+    padding: 50px 75px;
+    border-radius: 15px;
+    background-color: #404040;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 60vw;
+}
+
+.comment-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px;
+}
+
+.comments-title-separator{
+    font-size: clamp(1rem, 1vw + 2vh, 3rem);
+    width: 100%;
+    display: flexbox;
+    padding: 0px 50px;
+}
+
+hr.rounded {
+    border-top: 8px solid #FF9800;
+    border-radius: 5px;
+    width: 100%;
+}
+
+hr.solid {
+    border-top: 8px solid #141414;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.comment-form{
+    padding: 25px 25px;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box
+}
+
+.delete-button-comment{
+    padding: 5px 10px;
+    height: 50px;
+    box-shadow: 0;
+    color: white;
+    margin-left: 15px;
+}
+
+.create_article_card input,
+.create_article_card textarea,
+.create_article_card select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 25px 50px;
+    font-size: clamp(1rem, .1vh + 1vw, 3rem);
+    text-align: justify;
+    justify-content: center;
+    justify-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #FF9800;
+}
+
+a:hover{
+    color:#DD5600;
+}
+
+.comment-form-field{
+    width: 100%;
+    font-size: clamp(1rem, .1vh + 1vw, 3rem);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.comment-form-button{
+    background-color: #FF9800;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+    #top-nav-bar-title{
+        visibility: hidden;
+        font-size: 4px;
+    }
+
+    .content-body{
+        width: 90%;
+    }
+
+    .delete-button{
+        padding: 5px 10px;
+        box-shadow: 0;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .comment-form{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .comment-form-button{
+        background-color: #FF9800;
+        padding: 5px 10px;
+        color: white;
+        width: 75%;
+    }
+
+    .comment-form-field{
+        width: 100%;
+        font-size: clamp(1rem, .1vh + 1vw, 3rem);
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .delete-button-comment{
+        padding: 5px 10px;
+        height: 30px;
+        box-shadow: 0;
+        color: white;
+        font-size: .7rem;
+        margin: 15px 15px;
+    }
+}
+
+
+
