@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/petrulazarHeroStyle.css') }}?id={{ random() }}">
+	<link rel="stylesheet" href="{{ asset('css/petrulazarHeroStyle.css') }}">
 {% endblock %}
 
 {% block javascripts %}
-	<script src="{{ asset('javascript/petruLazarsDictionary.js')}}?id={{ random() }}"></script>
+	<script src="{{ asset('javascript/petruLazarsDictionary.js')}}"></script>
 	{{ parent() }}
 {% endblock %}
 
