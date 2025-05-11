@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Petru Lazar's Ancient dictionary
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/petrulazarHeroStyle.css') }}?id={{ random() }}">
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('javascript/petruLazarsDictionary.js')}}?id={{ random() }}"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div id="dictionary-page">
+		<nav>
+			<a href="{{ path('petrulazar_login') }}">
+				{% if not loggedIn %}
+					Log In
+				{% else %}
+					Log Out
+				{% endif %}
+			</a>
+		</nav>
+		<div id="errordiv"></div>
+		<div id="searchbox">
+			<h1>
+				Search here:
+			</h1>
+			<textarea class="ancient" oninput="searchboxModified()"></textarea>
+			<input type="checkbox" name="ancient_search" id="ancient_search" class="hidden" onchange="searchboxFontSwitch()" checked>
+			<label for="ancient_search" class="ancient">
+				r
+			</label>
+			{% if loggedIn %}
+				<div id="new_entry_group">
+					<input type="button" name="add_new" id="new_entry" class="hidden" onclick="submitNewEntries()">
+					<label for="new_entry">
+						+
+					</label>
+				</div>
+			{% endif %}
+		</div>
+		{% if debug is defined %}
+			<div id="debug">
+				<input type="text" class="ancient" placeholder="...">
+				<input type="text" placeholder="{% if loggedIn %}Logged in{% else %}Not Logged in{% endif %}">
+			</div>
+		{% endif %}
+		<div id="dictionary">
+			<div id="glyphs">
+				{% block glyphs_block %}
+					<h1>
+						Glyphs:
+					</h1>
+					<ul>
+						{% for glyph in glyphs %}
+							<li>
+								<span class="ancient">
+									{{ glyph.ancient_glyph }}
+								</span>
+								=
+								{{ glyph.english_key }}
+							</li>
+						{% else %}
+							<li>
+								No glyphs matched
+							</li>
+						{% endfor %}
+					</ul>
+				{% endblock %}
+			</div>
+			<div id="words">
+				{% block words_block %}
+					<h1>
+						Words:
+					</h1>
+					<ul>
+						{% for word in words %}
+							<li>
+								{% if loggedIn %}
+									<form action="dummy" method="post" onsubmit="onWordEditSubmit(event, {{ word.id }})" autocomplete="off">
+										<input type="text" name="word_glyphs" id="word_glyphs_{{ word.id }}" class="ancient" value="{{ word.glyphs }}" placeholder="...">
+										=
+										<input type="text" name="word_translation" id="word_translation_{{ word.id }}" {% if not word.confirmed %} class="unconfirmed" {% endif %} value="{{ word.translation }}" placeholder="...">
+										<input type="checkbox" name="word_confirmed" id="word_confirmed_{{ word.id }}" {% if word.confirmed %} checked {% endif %}>
+										<input type="submit">
+									</form>
+								{% else %}
+									<span class="ancient">
+										{{ word.glyphs }}
+									</span>
+									=
+									<span {% if not word.confirmed %} class="unconfirmed" {% endif %}>
+										{{ word.translation }}
+									</span>
+								{% endif %}
+							</li>
+						{% else %}
+							<li>
+								No words matched
+							</li>
+						{% endfor %}
+					</ul>
+				{% endblock %}
+			</div>
+			<div id="phrases">
+				{% block phrases_block %}
+					<h1>
+						Phrases:
+					</h1>
+					<ul>
+						{% for phrase in phrases %}
+							<li class="ancient">
+								{% for phrase_element in phrase.words %}
+									<span class="phraseword">
+										{{ phrase_element.glyphs }}<div class="word_tooltip{% if not phrase_element.confirmed %} unconfirmed{% endif %}">
+											{{ phrase_element.translation }}
+										</div>
+									</span>
+								{% endfor %}
+								{% if loggedIn %}
+									<input type="button" id="removephrase{{ phrase.id }}" class="hidden" onclick="deletePhrase({{ phrase.id }})">
+									<label for="removephrase{{ phrase.id }}">
+										X
+									</label>
+								{% endif %}
+							</li>
+						{% else %}
+							<li>
+								No phrases matched
+							</li>
+						{% endfor %}
+					</ul>
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
