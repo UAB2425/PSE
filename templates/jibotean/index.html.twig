@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ content.title }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/JDVstyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/JDVindex.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="header-section">
+            <div class="header-container">
+                <h1>{{ content.title }}</h1>
+                
+                <div class="admin-links">
+                    {% if is_authenticated %}
+                        <a href="{{ path('JDV_edit') }}" class="btn-edit">Editează</a>
+                        <a href="{{ path('JDV_logout') }}" class="btn-logout">Deconectare</a>
+                    {% else %}
+                        <a href="{{ path('JDV_login') }}" class="btn-login">Autentificare</a>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% for message in app.flashes('success') %}
+                <div class="flash-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+        
+        <div class="content-section">
+            <h2>Despre</h2>
+            <div class="profile-container">
+                <div class="text">
+                    <p>{{ content.paragraphOne }}</p>
+                    <p>{{ content.paragraphTwo }}</p>
+                </div>
+                <div class="image">
+                    <img src="{{ asset('images/JDV.png') }}" alt="Imagine profil">
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2>Interese și abilități</h2>
+            <ul>
+                {% for skill in content.skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <p>&copy; {{ "now"|date("Y") }} - Ultima actualizare: {{ content.updatedAt|date("d.m.Y H:i") }}</p>
+        </div>
+    </div>
+{% endblock %}
