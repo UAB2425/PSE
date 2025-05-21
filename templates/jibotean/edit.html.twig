@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editare pagină personală{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/JDVstyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/JDVedit.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="edit-container">
+        <h1>Editare pagină personală</h1>
+        
+        {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title) }}
+                {{ form_errors(form.title) }}
+            </div>
+            
+            <div class="form-group">
+                {{ form_label(form.paragraphOne) }}
+                {{ form_widget(form.paragraphOne) }}
+                {{ form_errors(form.paragraphOne) }}
+            </div>
+            
+            <div class="form-group">
+                {{ form_label(form.paragraphTwo) }}
+                {{ form_widget(form.paragraphTwo) }}
+                {{ form_errors(form.paragraphTwo) }}
+            </div>
+            
+            <div class="image-preview">
+                <h3>Imagine de profil</h3>
+                <img src="{{ asset('images/JDV.png') }}" alt="Imagine profil">
+                <p class="image-note">Imaginea este încărcată din fișierul: /public/images/JDV.png</p>
+            </div>
+            
+            <div class="form-group">
+                {{ form_label(form.skillsText) }}
+                {{ form_widget(form.skillsText) }}
+                {{ form_errors(form.skillsText) }}
+            </div>
+            
+            <div class="buttons">
+                <button type="submit">Salvează modificările</button>
+                <a href="{{ path('JDV') }}" class="back-link">Înapoi</a>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
