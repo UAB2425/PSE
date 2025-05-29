@@ -12,3 +12,4 @@ Bzovii Elena
 Petru Lazar
 Jibotean Denis-Virgil
 Lascus Andrea
+Seyidova Akmaral
