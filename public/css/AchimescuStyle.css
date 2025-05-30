@@ -1,0 +1,34 @@
+body {
+    background: #172e3c;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.profile-container {
+    background: #00cb8c;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px 10px 10px 10px;
+}
+
+.name {
+    text-align: center;
+}
+
+.profile-container .profile-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.profile-container .profile-image-container .profile-image {
+    width: 15vw;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container .profile-content {
+    margin-left: 20px;
+}

@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#hero-card {
+    width: 50%;
+    background-color: rgb(226, 128, 16);
+    margin-top: 100px;
+    padding: 25px;
+    border-radius: 40px;
+    border: 2px solid rgb(31, 16, 236);
+}
+
+#hero-card img {
+    width: 200px;
+    float: left;
+    --picture-margin: 20px;
+    margin: var(--picture-margin);
+    margin-right: calc(var(--picture-margin) * 2);
+}
+
+#hero-text {
+    font-size: 23px;
+}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editează Pagina{% endblock %}
+
+{% block body %}
+    <h1>Editează conținutul paginii</h1>
+
+    <form method="post">
+        <textarea name="content" rows="15" cols="100">{{ page.content }}</textarea><br><br>
+        <button type="submit">Salvează</button>
+    </form>
+{% endblock %}

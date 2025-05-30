@@ -1,0 +1,102 @@
+body {
+    background-color: #e0f7fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+header {
+    background: #00796b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start; /* Aliniere la începutul containerului */
+    justify-content: flex-start;
+    max-width: 900px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+.personal-image {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.text-content {
+    flex: 1;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+ul {
+    list-style-type: square;   /* păstrează punctele sub formă de pătrate */
+    list-style-position: inside; /* pune punctele la interior, aproape de text */
+    padding-left: 0;           /* elimină padding-ul stâng pentru a muta punctele lângă text */
+    margin-left: 0;            /* elimină marginile pentru a evita spațiile suplimentare */
+}
+
+li {
+    margin-bottom: 10px;       /* adaugă un mic spațiu între elementele din listă */
+}
+
+.centered-box {
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+footer {
+    background: #00796b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    /*position: fixed; */
+    bottom: 0;
+    margin-top: 50px;
+}

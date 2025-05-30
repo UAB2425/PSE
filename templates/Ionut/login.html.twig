@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('css/IonutsStyles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form method="post" action="http://127.0.0.1:8000/ionut/login?returnUrl={{ app.session.get('returnUrl') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="_username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="_password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

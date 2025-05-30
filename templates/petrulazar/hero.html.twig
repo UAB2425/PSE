@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Petru Lazar's Hero Page
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/petrulazarHeroStyle.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="hero-card">
+    <img src="{{ asset('images/petrulazar.jpg') }}"
+        alt="Picture that is not interesting at all. Trust me, you don't wanna see it.">
+    <div id="hero-text">
+        <p> This is just a regular guy that is passionate about programming, science in general and games. Also
+            passionate about combining these things into one. So maybe like... programming a game about science? </p>
+        <p> He lives over there and likes it. Sometimes though he comes over here just for the fun of it. After he's had
+            his fun, he goes back over there. </p>
+        <p> Beyond living over there and coming over here, and beyond programming sciency games, he also likes:
+        <ul>
+            <li> Algorithms </li>
+            <li> Sugar </li>
+            <li> Sleep </li>
+        </ul>
+        </p>
+    </div>
+</div>
+{% endblock %}

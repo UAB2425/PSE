@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ content.title }}</title>
+    <link rel="stylesheet" href="{{ asset('css/IonutsStyles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="/images/IonutsPhoto.jpg" alt="Poza profil">
+        </div>
+        <h1>{{ content.title }}</h1>
+        <p>{{ content.content }}</p>
+        <h3>Îmi plac 3 activități:</h3>
+        <ul>
+            <li>Muzica</li>
+            <li>Drumețiile</li>
+            <li>Tehnologia</li>
+        </ul>
+        <a href="/ionut/edit">Editează conținutul</a>
+    </div>
+</body>
+</html>

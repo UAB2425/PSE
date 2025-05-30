@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagina lui Truta George Marius{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/Truta_George_Marius.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Bună, eu sunt Truta George Marius!</h1>
+        
+        <img src="{{ asset('images/poza_mea.jpg') }}" alt="Poza mea" class="profile-image">
+        
+        <div class="text-content">
+            <p>Acesta este primul meu paragraf. Sunt student la Informatică și îmi place să lucrez în Symfony.</p>
+            <p>Al doilea paragraf: Am ales acest proiect pentru a învăța dezvoltarea web.</p>
+            
+            <ul>
+                <li>Interese: Programare, Gaming-ul</li>
+                <li>Proiecte Recente: Un site pentru gestionarea task-urilor</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

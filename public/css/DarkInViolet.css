@@ -1,0 +1,71 @@
+/* Import medieval font */
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+body {
+    background: url("/images/Background_DarkInViolet.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Uncial Antiqua', cursive; /* Medieval Font */
+    margin: 0;
+    padding: 0;
+    color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full screen height */
+}
+
+/* Centered content box with medieval border */
+.container {
+    background: rgba(20, 20, 40, 0.9); /* Dark semi-transparent box */
+    padding: 30px;
+    max-width: 1000px; /* Adjusted width */
+    border-radius: 20px;
+    text-align: center; /* Centers all text inside */
+    box-shadow: 0 0 20px rgba(255, 223, 0, 0.8); /* Light golden shadow */
+    border: 15px solid transparent;
+    border-image: url("/images/Border_DarkInViolet.png") 30 round; /* Medieval stone effect */
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Profile section */
+.profile-box {
+    display: flex;
+    justify-content: center; /* Centers the image and text */
+    align-items: center;
+    gap: 40px; /* Space between image and text */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+/* Profile picture styling */
+.profile-pic {
+    max-width: 400px; /* Ensures the image is big enough */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #FFD700; /* Gold border */
+}
+
+/* Profile info */
+.profile-info {
+    text-align: center;
+    max-width: 600px;
+    font-size: 1.1rem;
+    flex: 1; /* Allows the text to take remaining space */
+}
+
+/* Interests Section */
+.interests {
+    margin-top: 30px;
+}
+
+/* Styled list */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-weight: bold;
+    color: #FFD700;
+    padding: 5px 0;
+}

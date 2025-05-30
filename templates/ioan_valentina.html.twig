@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagina Personală{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/ioan_valentina.css') }}">
+
+    <div class="personal-container">
+        <div class="header-section">
+            <div class="image-container">
+                <img src="{{ asset('images/poza_Ioan_valentina.jpg') }}" alt="Poză Ioan Valentina">
+            </div>
+            <div class="name-container">
+                <h1>Ioan Valentina</h1>
+                <p class="subtitle">Student master UAB</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <div class="text-content">
+                <h2>Despre Mine</h2>
+                <p>Sunt Ioan Valentina, studentă la master, specializarea Programare Avansată și Baze de Date, la Facultatea de Informatică și Inginerie din cadrul Universității 1 Decembrie 1918 Alba Iulia.</p>
+                <p>În acest moment nu am experiență profesioanlă în domeniu dar am expriență de trei ani în departamentul logistic</p>
+                <p>În timpul liber îmi place să mă joc jocuri video, să citesc cărți de beletristică în format fizic în timp ce ascult muzică</p>
+
+                <h2>Hobby-uri</h2>
+                <ul class="hobby-list">
+                    <li>gaming</li>
+                    <li>citit</li>
+                    <li>lego</li>
+                    <li>filme</li>
+                    <li>muzică</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

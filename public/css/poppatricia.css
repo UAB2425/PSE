@@ -1,0 +1,77 @@
+body {
+    background-color: #b7d0d8;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.space {
+    width: 100px;
+}
+
+.container {
+    display: grid;
+    grid-row: 2;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #b7d0d8;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1, h3 {
+    font-family: "Lucida Handwriting";
+    color: #b7d0d8;
+}
+
+.img-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.personal-image {
+    max-width: 200px;
+    border-radius: 15px;
+}
+
+.text-content {
+    flex: 2;
+    text-align: justify;
+    padding-left: 20px;
+    display: grid;
+    align-items: center;
+}
+
+p {
+    color: #000000;
+    line-height: 2;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    color: #000000;
+}
+
+ul li {
+    margin-bottom: 8px;
+}

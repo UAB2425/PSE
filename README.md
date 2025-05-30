@@ -13,3 +13,20 @@ Petru Lazar
 Jibotean Denis-Virgil
 Lascus Andrea
 Seyidova Akmaral
+Figlea Diana
+Cocerba Alexandru
+Achimescu Andrei
+Radu Diana Nicoleta
+Dicu Alexandru-Robert
+
+Barbut Dragos-Razvan
+
+Barbut Dragos-Razvan
+Rusca Bogdan-Ioan
+
+Frumosu Lucian
+Prata Antoniu-Emanuel
+Toma Laurentiu-Iulian
+
+Pop Patricia
+

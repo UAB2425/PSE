@@ -1,0 +1,73 @@
+/* Stiluri de bază pentru întreaga pagină */
+body {
+   font-family: Arial, sans-serif;
+   background-color: #e0f7fa; /* Culoare de fundal deschisă */
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   width: 80%;
+   margin: 20px auto;
+   background: #ffffff; /* Fundal alb pentru container */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+   text-align: center;
+   color: #00796b; /* Culoare verde pentru titlu */
+}
+
+.content {
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   flex-wrap: wrap;
+}
+
+.profile-image {
+   width: 200px; /* Dimensiune mai mare pentru imagine */
+   height: 200px;
+   border-radius: 50%; /* Formă rotundă pentru imagine */
+   margin-right: 30px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Umbra pe imagine */
+}
+
+.text {
+   flex: 1;
+   max-width: 60%; /* Lăsați textul să ocupe maxim 60% din lățimea containerului */
+}
+
+p {
+   line-height: 1.6; /* Îmbunătățim lizibilitatea textului */
+   margin-bottom: 20px;
+   color: #555555; /* Culoare mai închisă pentru text */
+}
+
+ul {
+   list-style-type: square; /* Puncte pătrate pentru lista neordonată */
+   padding-left: 20px;
+   color: #00796b; /* Culoare verde pentru textul din listă */
+}
+
+ul li {
+   margin-bottom: 10px; /* Spațiu între elementele din listă */
+}
+
+@media (max-width: 768px) {
+   .content {
+       flex-direction: column; /* Pe dispozitive mici, să fie pe coloană */
+       align-items: center;
+   }
+
+   .profile-image {
+       margin-right: 0;
+       margin-bottom: 20px;
+   }
+
+   .text {
+       max-width: 100%; /* Pe mobil, textul să ocupe întreaga lățime */
+   }
+}

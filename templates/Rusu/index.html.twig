@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagina Personală{% endblock %}
+
+{% block body %}
+
+<a href="{{ path('Rusu_edit') }}?user=admin&pass=parola123">
+    <button style="margin-top: 20px;">Editează conținutul</button>
+</a>
+
+    <div class="personal-page">
+        <img src="{{ asset('images/Rusu.jpg') }}" alt="Profil" class="profile-image">
+        <div class="text-content">
+            <h1>{{ name }}</h1>
+            {{ content|raw }}
+        </div>
+    </div>
+{% endblock %}

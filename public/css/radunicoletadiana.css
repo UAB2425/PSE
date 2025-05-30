@@ -1,0 +1,62 @@
+/* General styling for the page */
+body {
+    background-color: #f3e6f8; /* Light lilac background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container for personal content */
+.personal-container {
+    max-width: 800px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Image and name alignment */
+.image-name-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Image styling */
+.image-container img {
+    max-width: 180px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    margin-left: 200px;
+}
+
+/* Name styling */
+.name-container h1 {
+    color: #d48bc8; /* Soft pink */
+    font-size: 26px;
+    margin: 0;
+}
+
+/* Text content styling */
+.text-container {
+    text-align: center;
+}
+
+/* List styling */
+.text-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.text-container ul li {
+    background: #e6b3e6; /* Light lilac */
+    color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+}

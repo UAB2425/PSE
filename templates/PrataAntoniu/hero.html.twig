@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Pagina Personală - Prata Antoniu
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/PrataAntoniuStyle.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div id="content-container">
+        <!-- Imaginea personală -->
+        <img id="personal-image" src="{{ asset('images/PrataAntoniu.jpg') }}" alt="Prata Antoniu">
+
+        <div id="text-content">
+            <h1>Prata Antoniu</h1>
+            <p>
+                Bine ai venit pe pagina mea personală! Sunt pasionat de tehnologie, dezvoltare software și 
+                de tot ce înseamnă inovație în acest domeniu.
+            </p>
+
+            <p>
+                Îmi place să creez lucruri noi, să găsesc soluții inteligente și să împărtășesc cunoștințele acumulate. 
+                Aici vei găsi informații despre mine, proiectele mele și ceea ce mă inspiră.
+            </p>
+
+            <p>
+                De-a lungul anilor, am acumulat experiență în IT și am învățat multe lecții valoroase. 
+                Iată câteva principii care mă ghidează în dezvoltarea personală și profesională:
+            </p>
+
+            <ul>
+                <li>Învățarea continuă deschide mereu noi oportunități.</li>
+                <li>Urmează-ți pasiunea și investește timp în ceea ce iubești cu adevărat.</li>
+                <li>Colaborarea aduce idei proaspete și perspective diferite.</li>
+                <li>Fii flexibil și adaptabil – schimbarea face parte din evoluție.</li>
+            </ul>
+
+            <p>
+                Îți mulțumesc pentru vizită! Sper ca informațiile de aici să îți fie utile. 
+                Dacă ai întrebări sau vrei să discutăm despre un proiect, nu ezita să mă contactezi.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+

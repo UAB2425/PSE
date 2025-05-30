@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Lucianyck's Page
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/lucianyck.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="profile-wrapper">
+        <img src="{{ asset('images/Lucianyck.jpg') }}" alt="Lucianyck">
+        <div class="profile-text">
+            <h1>Lucianyck</h1>
+
+            <p>This is my personal page i guess.</p>
+            <p>Sometimes I wonder why socks disappear in the laundry, but I’ve accepted it as part of life now. Weather’s been doing its thing lately — kind of warm, kind of not. I had something important to do earlier, but then I forgot, so I guess it wasn’t that important. Anyway, not getting into anything too personal.</p>
+
+            <ul>
+                <li>What?</li>
+                <li>Why?</li>
+                <li>Who?</li>
+                <li>Where?</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

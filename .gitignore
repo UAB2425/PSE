@@ -1,0 +1,5 @@
+# ------------- no composer install files -------------
+assets/vendor/
+var/
+vendor/
+.env.local

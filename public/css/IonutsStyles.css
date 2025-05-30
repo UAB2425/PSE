@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Stiluri generale */
 body {
     background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     font-family: 'Roboto', sans-serif;
@@ -7,27 +8,71 @@ body {
     padding: 20px;
     color: #333;
 }
-
+*{
+    box-sizing: border-box;
+}
+/* Container principal */
 .container {
-    display: flex;
-    align-items: flex-start;
-    max-width: 800px;
-    margin: auto;
+    max-width: 900px;
+    margin: 20px auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    text-align: center; /* Centrează conținutul */
 }
 
 .container:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Login */
+.login-container{
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrează conținutul */
+}
+
+.login-container input[type="text"], .login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #00796b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Imaginea personală */
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Face imaginea rotundă */
+    border: 3px solid #00796b;
+    margin-bottom: 20px;
+}
+
 .personal-image {
-    max-width: 200px;
+    max-width: 100px;
+    height: auto;
     margin-right: 20px;
     border-radius: 50%; /* Face imaginea rotundă */
+    border: 3px solid #00796b;
     transition: transform 0.3s ease;
 }
 
@@ -35,6 +80,7 @@ body {
     transform: scale(1.05);
 }
 
+/* Conținut text */
 .text-content {
     flex: 1;
     text-align: justify;
@@ -42,6 +88,7 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Titlu */
 h1 {
     color: #00796b;
     font-weight: 700;
@@ -50,6 +97,7 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Paragrafe */
 p {
     color: #555;
     line-height: 1.8;
@@ -58,6 +106,7 @@ p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Subtitluri */
 h3 {
     color: #00796b;
     margin-top: 20px;
@@ -66,6 +115,7 @@ h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Listă */
 ul {
     padding-left: 20px;
     list-style-type: square;
@@ -76,17 +126,25 @@ ul li {
     margin-bottom: 10px;
 }
 
+/* Link */
 a {
-    color: #00796b;
+    display: inline-block;
+    margin-top: 20px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: white;
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 a:hover {
-    color: #004d40;
+    background-color: #2980b9;
 }
 
-/* Stilizare suplimentară pentru cele trei propoziții */
+/* Stilizare suplimentară pentru text evidențiat */
 .highlighted-text {
     background-color: #e0f7fa;
     border-left: 5px solid #00796b;

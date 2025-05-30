@@ -3,28 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ionut's Hero Page</title>
-
-    {# Include CSS corect #}
+    <title>{{ content.title }}</title>
     <link rel="stylesheet" href="{{ asset('css/IonutsStyles.css') }}">
 </head>
 <body>
     <div class="container">
-        {# Include imagine corect #}
-        <img src="{{ asset('images/IonutsPhoto.jpg') }}" alt="O imagine personală" class="personal-image">
-
-        <div class="text-content">
-            <h1>Ionut</h1>
-            <p>Sunt Ionut, un dezvoltator software pasionat de tehnologie și inovare. Îmi place să explorez noi tehnologii și să găsesc soluții creative pentru probleme complexe. Am o experiență vastă în dezvoltarea de aplicații web și mobile, și sunt mereu în căutarea unor provocări noi și interesante.</p>
-            <p>În timpul liber, îmi place să citesc articole și cărți despre ultimele tendințe în tehnologie și să particip la conferințe și workshop-uri pentru a-mi îmbunătăți cunoștințele. De asemenea, îmi place să colaborez cu alți dezvoltatori și să împărtășesc cunoștințele mele prin bloguri și tutoriale online.</p>
-            <p>Pe lângă pasiunea mea pentru tehnologie, îmi place să petrec timp în natură, să fac drumeții și să călătoresc. Cred că echilibrul între muncă și viața personală este esențial pentru a rămâne productiv și creativ.</p>
-            <h3>Imi plac 3 activități:</h3>
-            <ul>
-                <li>Muzica</li>
-                <li>Socializarea</li>
-                <li>Programarea</li>
-            </ul>
-        </div>
+        <h1>{{ content.title }}</h1>
+        <p>{{ content.content }}</p>
     </div>
 </body>
 </html>

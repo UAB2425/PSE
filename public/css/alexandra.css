@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #ffe6e6, #ffffff);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.personal-image {
+    max-width: 180px;
+    margin-right: 25px;
+    border-radius: 50%;
+    border: 3px solid #d32f2f;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.personal-image:hover {
+    transform: scale(1.08);
+    border-color: #b71c1c;
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+    line-height: 1.7;
+    letter-spacing: 0.7px;
+}
+
+h1 {
+    color: #d32f2f;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+h3 {
+    color: #c62828;
+    margin-top: 15px;
+    margin-bottom: 12px;
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: square;
+    color: #d32f2f;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #d32f2f;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #b71c1c;
+}
+
+
+.highlighted-text {
+    background-color: #ffe6e6;
+    border-left: 5px solid #d32f2f;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease-in-out;
+    text-align: justify;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+.highlighted-text:hover {
+    background-color: #ffcccc;
+}
+
+
+.name {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-top: 12px;
+}
+
+.quote {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 15px;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.07);
+}

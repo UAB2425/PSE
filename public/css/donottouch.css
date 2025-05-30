@@ -1,0 +1,13 @@
+
+body{
+    padding:2rem 3rem;
+    background-color:red;
+}
+.parent{
+display:flex;
+}
+
+.image{
+    width:600px;
+    height:400px;
+}
