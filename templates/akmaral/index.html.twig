@@ -1,50 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}About Akmaral Seyidova{% endblock %}
+{% block title %}About Akmaral{% endblock %}
 
 {% block body %}
-<div class="container" style="max-width: 800px; margin: 2rem auto; font-family: sans-serif;">
-    <h1>Hello, I'm Akmaral Seyidova</h1>
+<div style="max-width: 800px; margin: 2rem auto; padding: 2rem; font-family: 'Segoe UI', sans-serif; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px;">
+    <h1 style="text-align: center; font-size: 2.2rem; margin-bottom: 0.5rem;">{{ about.name }}</h1>
+    <h3 style="text-align: center; color: #666; font-weight: normal;">{{ about.title }}</h3>
 
-    <p>
-        I'm a Junior Data Scientist with hands-on experience in Python, machine learning, and NLP/LLM technologies.
-        I'm currently pursuing an MSc in Computer Science at "1 Decembrie 1918" University in Alba Iulia, Romania.
-    </p>
+    <section style="margin-top: 2rem;">
+        <h2 style="border-bottom: 1px solid #ccc;">Description</h2>
+        <p style="line-height: 1.6;">{{ about.description }}</p>
+    </section>
 
-    <h2>Professional Interests</h2>
-    <ul>
-        <li>Machine Learning & Predictive Modeling</li>
-        <li>Natural Language Processing (NLP) and Large Language Models</li>
-        <li>Data Visualization & Dashboards</li>
-    </ul>
+    <section>
+        <h2 style="border-bottom: 1px solid #ccc;">Skills</h2>
+        <p style="line-height: 1.6;">{{ about.skills }}</p>
+    </section>
 
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>Python, SQL, MongoDB</li>
-        <li>Pandas, NumPy, Scikit-learn, XGBoost</li>
-        <li>Hugging Face, RAG, Streamlit</li>
-        <li>Tableau, Looker, AWS Basics</li>
-    </ul>
+    {% if about.hobbies %}
+    <section>
+        <h2 style="border-bottom: 1px solid #ccc;">Hobbies</h2>
+        <p style="line-height: 1.6;">{{ about.hobbies }}</p>
+    </section>
+    {% endif %}
 
-    <h2>Recent Experience</h2>
-    <p>
-        <strong>Data Science Intern</strong> at Mersys LLC (Techno Study) <br>
-        <em>Aug 2023 - Mar 2024</em><br>
-        Developed ML models, deployed apps via Streamlit, and created data dashboards using Tableau.
-    </p>
-
-    <h2>Current Project</h2>
-    <p>
-        Building an intelligent document question answering system using RAG and Hugging Face Transformers as part of my MSc thesis.
-    </p>
-
-    <h2>Contact</h2>
-    <ul>
-        <li>Email: seyidovaakmaral@gmail.com</li>
-        <li><a href="https://github.com/AkmaralSeyidova" target="_blank">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/akmaral-seyidova-b09aa2249/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.kaggle.com/akmaralseyidova" target="_blank">Kaggle</a></li>
-    </ul>
+    <section>
+        <h2 style="border-bottom: 1px solid #ccc;">Links</h2>
+        <ul style="list-style: none; padding-left: 0;">
+            {% if about.github %}
+                <li>
+                    <a href="{{ about.github }}" target="_blank" style="text-decoration: none; color: #0366d6;">
+                        <strong>GitHub</strong> ↗
+                    </a>
+                </li>
+            {% endif %}
+            {% if about.linkedin %}
+                <li>
+                    <a href="{{ about.linkedin }}" target="_blank" style="text-decoration: none; color: #0a66c2;">
+                        <strong>LinkedIn</strong> ↗
+                    </a>
+                </li>
+            {% endif %}
+            {% if about.kaggle %}
+                <li>
+                    <a href="{{ about.kaggle }}" target="_blank" style="text-decoration: none; color: #20beff;">
+                        <strong>Kaggle</strong> ↗
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </section>
 </div>
 {% endblock %}
-
