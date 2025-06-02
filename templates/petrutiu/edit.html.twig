@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editare conținut{% endblock %}
+
+{% block body %}
+    <h1>Editează pagina personală</h1>
+    <form method="post">
+        <label>Titlu:</label><br>
+        <input type="text" name="titlu" value="{{ content.titlu }}"><br><br>
+
+        <label>Descriere:</label><br>
+        <textarea name="descriere">{{ content.descriere }}</textarea><br><br>
+
+        <label>Hobbyuri:</label><br>
+        <input type="text" name="hobbyuri" value="{{ content.hobbyuri }}"><br><br>
+
+        <label>Educație:</label><br>
+        <input type="text" name="educatie" value="{{ content.educatie }}"><br><br>
+
+        <label>Experiență:</label><br>
+        <input type="text" name="experienta" value="{{ content.experienta }}"><br><br>
+
+        <button type="submit">Salvează</button>
+    </form>
+
+    <a href="{{ path('petrutiu_index') }}">Înapoi la pagină</a>
+{% endblock %}
