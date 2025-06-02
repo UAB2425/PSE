@@ -1,0 +1,26 @@
+{% extends 'popa_diana/base.html.twig' %}
+
+{% block title %}Editare {{ continut.titlu }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Editare secțiune: {{ continut.titlu }}</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+
+    <form method="post">
+        <div>
+            <label for="titlu">Titlu</label><br>
+            <input type="text" id="titlu" name="titlu" value="{{ continut.titlu }}" required>
+        </div>
+        <div>
+            <label for="continut">Conținut</label><br>
+            <textarea id="continut" name="continut" rows="10" required>{{ continut.continut }}</textarea>
+        </div>
+        <button type="submit">Salvează</button>
+        <a href="{{ path('pagina_personala') }}">Anulează</a>
+    </form>
+</div>
+{% endblock %}
