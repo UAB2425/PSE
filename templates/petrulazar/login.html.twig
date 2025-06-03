@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Petru Lazar's Hero Page
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/petrulazarHeroStyle.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block body %}
+	<div id="login" class="color1">
+		<h1>
+			Login here
+		</h1>
+        {% if login_error != "" %}
+		<p> {{ login_error }}</p>
+        {% endif %}
+		<form action="" method="post">
+			<div>
+				<label for="username">
+					Username:
+				</label>
+				<input type="text" name="username"{% if user_error %} class="redshake"{% endif %} value="{{username}}">
+			</div>
+			<div>
+				<label for="password">
+					Password:
+				</label>
+				<input type="password" name="password"{% if password_error %} class="redshake"{% endif %}>
+			</div>
+			<input type="submit" value="Log in" name="login">
+		</form>
+	</div>
+{% endblock %}
