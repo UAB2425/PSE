@@ -20,6 +20,7 @@ Achimescu Andrei
 Radu Diana Nicoleta
 
 Dicu Alexandru-Robert
+Petrutiu Alexandru-Florin
 
 
 Barbut Dragos-Razvan
