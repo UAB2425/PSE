@@ -1,0 +1,25 @@
+{% extends 'popa_diana/base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Login</h1>
+
+    {% if error %}
+        <div style="color: red">{{ error }}</div>
+    {% endif %}
+
+    <form method="post">
+        <label>Username: <input type="text" name="username" required></label><br><br>
+        <label>Password: <input type="password" name="password" required></label><br><br>
+        <button type="submit">Login</button>
+    </form>
+{% if app.session.get('user') %}
+    <a href="{{ path('app_logout') }}">Logout</a>
+{% endif %}
+</div>
+
+
+
+{% endblock %}

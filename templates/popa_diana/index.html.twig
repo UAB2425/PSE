@@ -1,0 +1,48 @@
+{% extends 'popa_diana/base.html.twig' %}
+
+{% block title %}Pagina personală{% endblock %}
+
+{% block body %}
+<div class="container flex-layout">
+
+    <h1>{{ continut['despre'].titlu }}</h1>
+    <section>
+
+        <p>{{ continut['despre'].continut|raw }}</p>
+    </section>
+
+    <section>
+        <h2>{{ continut['proiecte'].titlu }}</h2>
+        <p>{{ continut['proiecte'].continut|raw }}</p>
+        {% if app.session.get('user') %}
+            <a href="{{ path('pagina_personala_edit', {'sectiune': 'proiecte'}) }}">Editează</a>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>{{ continut['hobby-uri'].titlu }}</h2>
+        <p>{{ continut['hobby-uri'].continut|raw }}</p>
+        {% if app.session.get('user') %}
+            <a href="{{ path('pagina_personala_edit', {'sectiune': 'hobby-uri'}) }}">Editează</a>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>{{ continut['contact'].titlu }}</h2>
+        <p>{{ continut['contact'].continut|raw }}</p>
+        {% if app.session.get('user') %}
+            <a href="{{ path('pagina_personala_edit', {'sectiune': 'contact'}) }}">Editează</a>
+        {% endif %}
+    </section>
+
+
+
+<div class="auth-links">
+    {% if app.session.get('user') %}
+        <a href="{{ path('app_logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ path('app_login') }}">Login</a>
+    {% endif %}
+</div>
+</div>
+{% endblock %}
