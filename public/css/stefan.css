@@ -1,0 +1,33 @@
+body {
+    background-color: #e0f7fa; /* Culoare fundal */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 200px;
+    float: left; /* Imaginea va fi în stânga cu text în dreapta */
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.text-content {
+    overflow: auto; /* Previne suprapunerea */
+}
+
+h1 {
+    color: #00796b;
+}
+
+ul {
+    list-style-type: square;
+    color: #555;
+}

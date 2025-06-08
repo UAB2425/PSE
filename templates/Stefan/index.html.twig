@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagina lui Vasiu Stefan{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/stefan.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Bună, eu sunt Stefan Vasiu!</h1>
+        
+        <img src="{{ asset('images/poza_stefan.jpg') }}" alt="Poza mea" class="profile-image">
+        
+        <div class="text-content">
+            <p>Acesta este primul meu paragraf. Sunt student la Informatică și îmi place să lucrez în Symfony.</p>
+            <p>Al doilea paragraf: Am ales acest proiect pentru a învăța dezvoltarea web.</p>
+            
+            <ul>
+                <li>Interese: Programare, Tic si Robtica</li>
+                <li>Lorem Ipsum</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
