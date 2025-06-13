@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jibotean Denis-Virgil - Pagina Personală</title>
+    <link rel="stylesheet" href="{{ asset('css/JDV_style.css') }}">
+</head>
+<body>
+    <!-- Bara administrare -->
+    <div class="admin-bar">
+        {% if app.session.get('is_admin_logged_in') %}
+            <a href="{{ path('jdv_edit') }}" class="admin-btn">⚙️ Editează Pagina</a>
+            <a href="{{ path('jdv_logout') }}" class="admin-btn logout-btn">🚪 Logout</a>
+        {% else %}
+            <a href="{{ path('jdv_login') }}" class="admin-btn login-btn">🔐 Login Admin</a>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="header-accent">
+                <h1>Jibotean Denis-Virgil</h1>
+                <p>Dezvoltator Web & Tehnologii Moderne</p>
+            </div>
+            
+            <div class="content">
+                <div class="profile-section">
+                    <img src="{{ asset('images/JDV.png') }}" alt="Profil Jibotean Denis-Virgil" class="profile-image">
+                    
+                    <div class="content-text">
+                        <h2 class="section-title">Despre Mine</h2>
+                        <div id="about-content">
+                            {{ aboutContent.content|nl2br|raw }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clear-both">
+                    <h2 class="section-title">Competențe Tehnice</h2>
+                    <ul class="skills-list" id="skills-list">
+                        {% for skill in skills %}
+                            <li class="skill-item" data-skill-id="{{ skill.id }}">
+                                {{ skill.name }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <p><strong>Jibotean Denis-Virgil</strong></p>
+                <p>GitHub: <a href="https://github.com/Denis-Jibotean" target="_blank">@Denis-Jibotean</a></p>
+                <p class="copyright">&copy; 2025 Jibotean Denis-Virgil - Proiect PSE2425</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 1rem;
+}
+
+.admin-bar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.admin-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.admin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+.container {
+    max-width: 896px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.header-accent {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.header-accent h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.header-accent p {
+    font-size: 1.25rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.profile-section {
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 264px;
+    height: 176px;
+    border-radius: 15px;
+    float: left;
+    margin: 0 1.5rem 0.75rem 0;
+    object-fit: cover;
+}
+
+.section-title {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.content-text {
+    color: #374151;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.content-text p {
+    margin-bottom: 1rem;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    color: #4b5563;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+.skills-list li::before {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.footer {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 0rem;
+}
+
+.footer p {
+    margin: 0.25rem 0;
+}
+
+.footer a {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #dbeafe;
+}
+
+.footer .copyright {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    opacity: 0.75;
+}
