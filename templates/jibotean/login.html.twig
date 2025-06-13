@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrator</title>
+    <link rel="stylesheet" href="{{ asset('css/JDV_login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🔐 Login Admin</h1>
+            </div>
+
+            <!-- Mesaje de eroare -->
+            {% if error %}
+                <div class="error-message">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <!-- Mesaje de succes -->
+            {% for message in app.flashes('success') %}
+                <div class="success-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+            <!-- Mesaje de eroare flash -->
+            {% for message in app.flashes('error') %}
+                <div class="error-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="username">Nume utilizator:</label>
+                    <input type="text" id="username" name="username" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Parolă:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button class="btn-login" type="submit">
+                    Login
+                </button>
+            </form>
+
+            <div class="back-link">
+                <a href="{{ path('jdv_home') }}">← Înapoi la pagina principală</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

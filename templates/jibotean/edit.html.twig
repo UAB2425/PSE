@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editează Pagina - Admin</title>
+    <link rel="stylesheet" href="{{ asset('css/JDV_edit.css') }}">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>⚙️ Editează Pagina</h1>
+            <p>Panoul de administrare pentru gestionarea conținutului</p>
+        </div>
+        
+        <div class="admin-content">
+            {% for message in app.flashes('success') %}
+                <div class="flash-success">✅ {{ message }}</div>
+            {% endfor %}
+
+            <!-- Editarea secțiunii "Despre Mine" -->
+            <div class="section-edit">
+                <h2 class="section-title">📝 Editează secțiunea "Despre Mine"</h2>
+                
+                <form method="post">
+                    <input type="hidden" name="action" value="update_content">
+                    
+                    <div class="form-group">
+                        <label for="about_content">Conținutul paragrafelor:</label>
+                        <textarea id="about_content" name="about_content" required>{{ aboutContent ? aboutContent.content : '' }}</textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">💾 Salvează conținutul</button>
+                </form>
+            </div>
+
+            <!-- Editarea competențelor -->
+            <div class="section-edit">
+                <h2 class="section-title">🛠️ Gestionează competențele</h2>
+                
+                <!-- Competențele existente -->
+                <div class="skills-editor">
+                    <h4>Competențele existente:</h4>
+                    <form method="post">
+                        <input type="hidden" name="action" value="update_skills">
+                        
+                        {% for skill in skills %}
+                            <div class="skill-item-edit">
+                                <input type="text" name="skills[{{ skill.id }}]" value="{{ skill.name }}" class="skill-input" required>
+                                <button type="button" onclick="deleteSkill({{ skill.id }})" class="btn btn-danger">🗑️ Șterge</button>
+                            </div>
+                        {% endfor %}
+                        
+                        {% if skills is not empty %}
+                            <button type="submit" class="btn btn-primary">💾 Actualizează competențele</button>
+                        {% endif %}
+                    </form>
+                </div>
+
+                <!-- Adăugarea unei competențe noi -->
+                <div class="add-skill-form">
+                    <h4>➕ Adaugă competență nouă:</h4>
+                    <form method="post">
+                        <input type="hidden" name="action" value="add_skill">
+                        
+                        <div style="display: flex; gap: 1rem; align-items: end;">
+                            <div style="flex: 1;">
+                                <label for="new_skill">Numele competenței:</label>
+                                <input type="text" id="new_skill" name="new_skill" placeholder="Ex: Node.js & Express" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">➕ Adaugă</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="admin-actions">
+                <a href="{{ path('jdv_home') }}" class="btn btn-secondary">🏠 Vezi pagina</a>
+                <a href="{{ path('jdv_logout') }}" class="btn btn-danger">🚪 Logout</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function deleteSkill(skillId) {
+            if (confirm('Ești sigur că vrei să ștergi această competență?')) {
+                fetch(`/jibotean/skill/delete/${skillId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload();
+                    } else {
+                        alert('Eroare la ștergere!');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
